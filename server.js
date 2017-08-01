@@ -33,4 +33,14 @@ app.post('/GetSessionDetails', function(req, res) {
 
 })
 
+app.post('/Logout', function(req, res) {
+    proxy.logout(req.body, function process(result, err){
+        if(err){
+            //something failed
+        }
+        res.end(JSON.stringify(result))
+    })
+
+})
+
  

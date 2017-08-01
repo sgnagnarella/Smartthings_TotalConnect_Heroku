@@ -23,6 +23,8 @@ function getSessionDetails(getSessionDetailsRequest, process){
         process(res, null)
     }
     
+    console.log(JSON.stringify(getSessionDetailsRequest))
+
     service.post('/TC21API/TC2.asmx/GetSessionDetails', getSessionDetailsRequest, processGetSessionDetailsResponse)
 }
 

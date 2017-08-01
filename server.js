@@ -43,4 +43,14 @@ app.post('/Logout', function(req, res) {
 
 })
 
+app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
+    proxy.getPanelMetaDataAndFullStatus(req.body, function process(result, err){
+        if(err){
+            //something failed
+        }
+        res.end(JSON.stringify(result))
+    })
+
+})
+
  

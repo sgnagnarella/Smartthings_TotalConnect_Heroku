@@ -13,5 +13,19 @@ function login(loginRequest, process){
     service.post('/TC21API/TC2.asmx/AuthenticateUserLogin', loginRequest, processLoginResponse)
 }
 
+function getSessionDetails(getSessionDetailsRequest, process){
+    
+    function processGetSessionDetailsResponse(res, err){
+        if(err){
+            process(null, err)
+        }
+
+        process(res, null)
+    }
+    
+    service.post('/TC21API/TC2.asmx/GetSessionDetails', getSessionDetailsRequest, processGetSessionDetailsResponse)
+}
+
 module.exports.login = login
+module.exports.getSessionDetails = getSessionDetails
 

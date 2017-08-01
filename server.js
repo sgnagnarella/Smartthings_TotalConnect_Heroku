@@ -13,7 +13,7 @@ var server = app.listen(process.env.PORT || 8080, function () {
     console.log("App now running on port", port);
 });
  
-app.post('/login', function(req, res) {
+app.post('/Login', function(req, res) {
     proxy.login(req.body, function process(result, err){
         if(err){
             //something failed
@@ -22,4 +22,15 @@ app.post('/login', function(req, res) {
     })
 
 })
+
+app.post('/GetSessionDetails', function(req, res) {
+    proxy.getSessionDetails(req.body, function process(result, err){
+        if(err){
+            //something failed
+        }
+        res.end(JSON.stringify(result))
+    })
+
+})
+
  

@@ -1,45 +1,19 @@
 const service = require('./alarmNetService')  
 
-function login(loginRequest, process){
+function login(req, process){
     console.log('proxy.Login')
-    function processLoginResponse(res, err){
-        if(err){
-            process(null, err)
-        }
-
-        process(res, null)
-    }
-    
-    service.post('/TC21API/TC2.asmx/AuthenticateUserLogin', loginRequest, processLoginResponse)
+    service.post('/TC21API/TC2.asmx/AuthenticateUserLogin', req, process)
 }
 
-function getSessionDetails(getSessionDetailsRequest, process){
+function getSessionDetails(req, process){
     console.log('proxy.getSessionDetails')
-    function processGetSessionDetailsResponse(res, err){
-        if(err){
-            process(null, err)
-        }
-
-        process(res, null)
-    }
-    
-    console.log('GetSessionDetailsRequest /n' + JSON.stringify(getSessionDetailsRequest))
-
-    service.post('/TC21API/TC2.asmx/GetSessionDetails', getSessionDetailsRequest, processGetSessionDetailsResponse)
+    service.post('/TC21API/TC2.asmx/GetSessionDetails', req, process)
 }
 
 
-function logout(logoutRequest, process){
+function logout(req, process){
     console.log('proxy.logout')
-    function processLogoutResponse(res, err){
-        if(err){
-            process(null, err)
-        }
-
-        process(res, null)
-    }
-    
-    service.post('/TC21API/TC2.asmx/Logout', logoutRequest, processLogoutResponse)
+    service.post('/TC21API/TC2.asmx/Logout', req, process)
 }
 
 

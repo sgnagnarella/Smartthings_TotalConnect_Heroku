@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 var proxy = require('./app/alarmNetProxy')
 
  
-var app = express()
+var app = express() 
 
 app.use( bodyParser.json() )
 

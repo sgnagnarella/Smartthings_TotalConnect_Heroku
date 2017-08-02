@@ -25,9 +25,14 @@ function post(endpoint, data, process) {
             msg += chunk
         })
         res.on('end', function() {
-            var responseObject = xml2jsParser.parseStringSync(msg)
-            console.log(responseObject)
-            process(responseObject, null)
+            try{
+                var cleanedString = msg.replace("\ufeff", "");
+                var responseObject = xml2jsParser.parseStringSync(cleanedString)
+                console.log(responseObject)
+                process(responseObject, null)
+            } catch(e) {
+                process(null, e);
+            }
         })
         res.on('error', function(err){
             console.log(err)

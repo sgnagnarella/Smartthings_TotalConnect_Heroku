@@ -18,7 +18,7 @@ app.post('/Login', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.json(result)
     })
 
 })
@@ -28,7 +28,7 @@ app.post('/GetSessionDetails', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.json(result)
     })
 
 })
@@ -38,7 +38,7 @@ app.post('/Logout', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.json(result)
     })
 
 })
@@ -48,7 +48,7 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.json(result)
     })
 
 })
@@ -58,7 +58,7 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.json(result)
     })
 
 })
@@ -69,7 +69,7 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.json(result)
     })
 
 })

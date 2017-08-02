@@ -75,13 +75,5 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
 })
 
 
- app.get('/Version', function(req, res) {
-  
-        var versionDate = {
-          version: 1.1
-        }
-        res.send(JSON.stringify(version))
-    })
 
-})
 

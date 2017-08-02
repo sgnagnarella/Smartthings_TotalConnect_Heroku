@@ -18,7 +18,7 @@ app.post('/Login', function(req, res) {
         if(err){
             //something failed
         }
-        res.end(JSON.stringify(result))
+        res.send(JSON.stringify(result))
     })
 
 })
@@ -26,9 +26,9 @@ app.post('/Login', function(req, res) {
 app.post('/GetSessionDetails', function(req, res) {
     proxy.getSessionDetails(req.body, function process(result, err){
         if(err){
-            //something failed
+            res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.send(JSON.stringify(result))
     })
 
 })
@@ -36,9 +36,9 @@ app.post('/GetSessionDetails', function(req, res) {
 app.post('/Logout', function(req, res) {
     proxy.logout(req.body, function process(result, err){
         if(err){
-            //something failed
+            res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.send(JSON.stringify(result))
     })
 
 })
@@ -46,9 +46,9 @@ app.post('/Logout', function(req, res) {
 app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
     proxy.getPanelMetaDataAndFullStatus(req.body, function process(result, err){
         if(err){
-            //something failed
+            res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.send(JSON.stringify(result))
     })
 
 })
@@ -56,9 +56,9 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
  app.post('/DisarmSecuritySystem', function(req, res) {
     proxy.disarmSecuritySystem(req.body, function process(result, err){
         if(err){
-            //something failed
+            res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.send(JSON.stringify(result))
     })
 
 })
@@ -67,9 +67,9 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
  app.post('/ArmSecuritySystem', function(req, res) {
     proxy.armSecuritySystem(req.body, function process(result, err){
         if(err){
-            //something failed
+            res.status(500).end()
         }
-        res.end(JSON.stringify(result))
+        res.send(JSON.stringify(result))
     })
 
 })

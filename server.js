@@ -16,9 +16,9 @@ var server = app.listen(process.env.PORT || 8080, function () {
 app.post('/Login', function(req, res) {
     proxy.login(req.body, function process(result, err){
         if(err){
-            //something failed
+            res.status(500).end()
         }
-        res.send(JSON.stringify(result))
+        res.end(JSON.stringify(result))
     })
 
 })
@@ -28,7 +28,7 @@ app.post('/GetSessionDetails', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.send(JSON.stringify(result))
+        res.end(JSON.stringify(result))
     })
 
 })
@@ -38,7 +38,7 @@ app.post('/Logout', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.send(JSON.stringify(result))
+        res.end(JSON.stringify(result))
     })
 
 })
@@ -48,7 +48,7 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.send(JSON.stringify(result))
+        res.end(JSON.stringify(result))
     })
 
 })
@@ -58,7 +58,7 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.send(JSON.stringify(result))
+        res.end(JSON.stringify(result))
     })
 
 })
@@ -69,7 +69,7 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
         if(err){
             res.status(500).end()
         }
-        res.send(JSON.stringify(result))
+        res.end(JSON.stringify(result))
     })
 
 })

@@ -53,4 +53,25 @@ app.post('/GetPanelMetaDataAndFullStatus', function(req, res) {
 
 })
 
- 
+ app.post('/DisarmSecuritySystem', function(req, res) {
+    proxy.disarmSecuritySystem(req.body, function process(result, err){
+        if(err){
+            //something failed
+        }
+        res.end(JSON.stringify(result))
+    })
+
+})
+
+
+ app.post('/ArmSecuritySystem', function(req, res) {
+    proxy.armSecuritySystem(req.body, function process(result, err){
+        if(err){
+            //something failed
+        }
+        res.end(JSON.stringify(result))
+    })
+
+})
+
+
